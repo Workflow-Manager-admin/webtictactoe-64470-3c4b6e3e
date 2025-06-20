@@ -1,0 +1,56 @@
+.tvt-theme-root {
+  --ttt-primary: #4caf50;
+  --ttt-secondary: #ffc107;
+  --ttt-accent: #2196f3;
+  --ttt-bg: #f9f9f9;
+  --ttt-border: #e0e0e0;
+}
+
+.ttt-board-outer {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ttt-bg, #f9f9f9);
+}
+
+.ttt-board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 64px);
+  grid-template-rows: repeat(3, 64px);
+  gap: 0;
+  border-radius: 18px;
+  box-shadow: 0 2px 18px 2px rgba(33, 150, 243, 0.04);
+  border: 2px solid var(--ttt-primary, #4caf50);
+  background: white;
+}
+
+.ttt-board-cell {
+  width: 64px;
+  height: 64px;
+  background: transparent;
+  border: 1.5px solid var(--ttt-primary, #4caf50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+
+.ttt-board-cell:hover {
+  background: var(--ttt-secondary, #ffc107);
+  box-shadow: 0 0 0 3px var(--ttt-accent, #2196f3, 0.12);
+}
+
+@media (max-width: 550px) {
+  .ttt-board-grid {
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
+  }
+  .ttt-board-cell {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
